@@ -43,6 +43,11 @@ public class Options {
 	private double expandBoundsFactor = DEFAULT_EXPAND_BOUNDS_FACTOR;
 
 	/**
+	 * Enable or disable clustering
+	 */
+	private boolean clusterEnabled = true;
+
+	/**
 	 * The MarkerOptionsChooser to use for customizing MarkerOptions objects.
 	 */
 	private MarkerOptionsChooser markerOptionsChooser;
@@ -59,11 +64,11 @@ public class Options {
 	 */
 	private OnInfoWindowClickDownstreamListener onInfoWindowClickDownstreamListener;
 
-    /**
-     * The InfoWindowDownstreamAdapter to receive callbacks when an info window
-     * needs to be displayed.
-     */
-    private InfoWindowDownstreamAdapter infoWindowDownstreamAdapter;
+	/**
+	 * The InfoWindowDownstreamAdapter to receive callbacks when an info window
+	 * needs to be displayed.
+	 */
+	private InfoWindowDownstreamAdapter infoWindowDownstreamAdapter;
 
 	/**
 	 * When zooming to the bounds of a marker's backing ClusterPoint, zoom until
@@ -117,6 +122,20 @@ public class Options {
 	 * 
 	 */
 	private ProcessingListener processingListener;
+
+	/**
+	 * @return clusterEnabled
+	 */
+	public boolean isClusterEnabled() {
+		return clusterEnabled;
+	}
+
+	/**
+	 * @param clusterEnabled
+	 */
+	public void setClusterEnabled(boolean clusterEnabled) {
+		this.clusterEnabled = clusterEnabled;
+	}
 
 	/**
 	 * @return the transitionDuration
@@ -225,22 +244,22 @@ public class Options {
 		this.onInfoWindowClickDownstreamListener = onInfoWindowClickDownstreamListener;
 	}
 
-    /**
-     * @return the infoWindowDownstreamAdapter
-     */
-    public InfoWindowDownstreamAdapter getInfoWindowDownstreamAdapter() {
-        return this.infoWindowDownstreamAdapter;
-    }
+	/**
+	 * @return the infoWindowDownstreamAdapter
+	 */
+	public InfoWindowDownstreamAdapter getInfoWindowDownstreamAdapter() {
+		return this.infoWindowDownstreamAdapter;
+	}
 
-    /**
-     * @param infoWindowDownstreamAdapter
-     *            the infoWindowDownstreamAdapter to set
-     */
-    public void setInfoWindowDownstreamAdapter(InfoWindowDownstreamAdapter infoWindowDownstreamAdapter) {
-        this.infoWindowDownstreamAdapter = infoWindowDownstreamAdapter;
-    }
+	/**
+	 * @param infoWindowDownstreamAdapter
+	 *            the infoWindowDownstreamAdapter to set
+	 */
+	public void setInfoWindowDownstreamAdapter(InfoWindowDownstreamAdapter infoWindowDownstreamAdapter) {
+		this.infoWindowDownstreamAdapter = infoWindowDownstreamAdapter;
+	}
 
-    /**
+	/**
 	 * @return the clusterClickBehavior
 	 */
 	ClusterClickBehavior getClusterClickBehavior() {
